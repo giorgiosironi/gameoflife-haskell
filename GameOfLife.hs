@@ -2,9 +2,6 @@ data CellState = Dead | Alive
 data Position = Position Integer Integer
 type Generation = Position -> CellState
 
-evolution :: Generation -> Generation
-evolution generation = new_generation generation
-
 alive_neighbors :: Generation -> Position -> Int
 alive_neighbors generation position = length (filter is_alive (map generation (neighbors position)))
 
@@ -17,8 +14,8 @@ neighbors (Position x y) =
     [(Position (x-1) (y-1)), (Position x (y-1)),  (Position (x+1) (y-1)), (Position (x+1) y),
      (Position (x+1) (y+1)), (Position x (y+1)), (Position (x-1) (y+1)), (Position (x-1) y)]
 
-new_generation :: Generation -> Position -> CellState
-new_generation generation position = 
+evolution :: Generation -> Generation
+evolution generation position = 
     case (alive_neighbors generation position) of
         2 -> if (is_alive (generation position)) then Alive else Dead
         3 -> Alive
