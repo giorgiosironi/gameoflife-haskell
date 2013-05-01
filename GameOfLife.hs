@@ -21,10 +21,11 @@ evolution generation position =
         3 -> Alive
         _ -> Dead
 
-print_generation generation = 
-    map (line generation) [1..10]
+visualize_generation generation = 
+    map (visualize_line generation) [1..10]
 
-line generation y =
+visualize_line :: Generation -> Integer -> String
+visualize_line generation y =
     concat (map (visualize_cell generation y) [1..10])
 
 visualize_cell generation y x = 
