@@ -1,5 +1,6 @@
 == Example ==
 
+```
 *Main> mapM_ print (visualize_generation bar)
 "          "
 "XXX       "
@@ -33,4 +34,4 @@
 "          "
 "          "
 "          "
-
+```
