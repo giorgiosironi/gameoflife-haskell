@@ -1,0 +1,36 @@
+== Example ==
+
+*Main> mapM_ print (print_generation bar)
+"          "
+"XXX       "
+"          "
+"          "
+"          "
+"          "
+"          "
+"          "
+"          "
+"          "
+*Main> mapM_ print (print_generation (evolution bar))
+" X        "
+" X        "
+" X        "
+"          "
+"          "
+"          "
+"          "
+"          "
+"          "
+"          "
+*Main> mapM_ print (print_generation (evolution (evolution bar)))
+"          "
+"XXX       "
+"          "
+"          "
+"          "
+"          "
+"          "
+"          "
+"          "
+"          "
+
